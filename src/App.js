@@ -1,14 +1,6 @@
-import { Component, Fragment } from "react";
+import Hangman from "./components/Hangman";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <h1>Hangman</h1>
-      </Fragment>
-    );
-  }
-}
+const App = () => <Hangman />;
 
 export default App;
