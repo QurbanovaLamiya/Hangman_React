@@ -3,19 +3,21 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #000;
   color: #fff;
+  overflow: hidden;
+}
+
+h1,
+p {
   text-align: center;
 }
 
 .game-container {
-  padding: 20px 30px;
+  padding: 30px;
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 450px;
+  width: 50%;
 }
 
 .figure-container {
@@ -23,10 +25,6 @@ body {
   stroke: #fff;
   stroke-width: 4px;
   stroke-linecap: round;
-}
-
-.figure-part {
-  display: none;
 }
 
 .wrong-letters-container {
@@ -49,7 +47,7 @@ body {
 .word {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -66,13 +64,13 @@ body {
 }
 
 .popup-container {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(252, 227, 227, 0.3);
   position: fixed;
+  z-index: 9999;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /* display: flex; */
   display: none;
   align-items: center;
   justify-content: center;
@@ -105,10 +103,11 @@ body {
 }
 
 .notification-container {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #2980b9;
   border-radius: 10px 10px 0 0;
   padding: 15px 20px;
   position: absolute;
+  left: 40%;
   bottom: -50px;
   transition: transform 0.3s ease-in-out;
 }
@@ -118,5 +117,5 @@ body {
 }
 
 .notification-container.show {
-  transform: translateY(-50px);
+  transform: translateY(-100px);
 }

@@ -1,4 +1,6 @@
-const Figure = () => {
+const Figure = ({ wrongLetters }) => {
+  const wrong = wrongLetters.length;
+
   return (
     <svg height="250" width="200" className="figure-container">
       {/* <!-- Rod --> */}
@@ -8,15 +10,18 @@ const Figure = () => {
       <line x1="20" y1="230" x2="100" y2="230" />
 
       {/* <!-- Head --> */}
-      <circle cx="140" cy="70" r="20" />
+      {wrong > 0 && <circle cx="140" cy="70" r="20" />}
+
       {/* <!-- Body --> */}
-      <line x1="140" y1="90" x2="140" y2="150" />
+      {wrong > 1 && <line x1="140" y1="90" x2="140" y2="150" />}
+
       {/* <!-- Arms --> */}
-      <line x1="140" y1="120" x2="120" y2="100" />
-      <line x1="140" y1="120" x2="160" y2="100" />
+      {wrong > 2 && <line x1="140" y1="120" x2="120" y2="100" />}
+      {wrong > 3 && <line x1="140" y1="120" x2="160" y2="100" />}
+
       {/* <!-- Legs --> */}
-      <line x1="140" y1="150" x2="120" y2="180" />
-      <line x1="140" y1="150" x2="160" y2="180" />
+      {wrong > 4 && <line x1="140" y1="150" x2="120" y2="180" />}
+      {wrong > 5 && <line x1="140" y1="150" x2="160" y2="180" />}
     </svg>
   );
 };
