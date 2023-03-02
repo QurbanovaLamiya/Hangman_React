@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { checkWin } from "../utils/util";
+import PropTypes from "prop-types";
 
 const Popup = ({
   correctLetters,
@@ -23,7 +24,7 @@ const Popup = ({
 
   useEffect(() => {
     setPlayable(playable);
-  });
+  }, []);
 
   return (
     <div
@@ -37,6 +38,14 @@ const Popup = ({
       </div>
     </div>
   );
+};
+
+Popup.propTypes = {
+  selectedWord: PropTypes.string,
+  correctLetters: PropTypes.array,
+  wrongLetters: PropTypes.array,
+  setPlayable: PropTypes.func,
+  playAgain: PropTypes.func,
 };
 
 export default Popup;

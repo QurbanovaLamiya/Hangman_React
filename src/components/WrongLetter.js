@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const WrongLetter = ({ wrongLetters }) => {
   return (
     <div className="wrong-letters-container">
@@ -11,6 +13,10 @@ const WrongLetter = ({ wrongLetters }) => {
       </div>
     </div>
   );
+};
+
+WrongLetter.propTypes = {
+  wrongLetters: PropTypes.array,
 };
 
 export default WrongLetter;

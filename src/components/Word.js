@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Word = ({ selectedWord, correctLetters }) => {
   return (
     <div className="word">
@@ -8,6 +10,11 @@ const Word = ({ selectedWord, correctLetters }) => {
       ))}
     </div>
   );
+};
+
+Word.propTypes = {
+  selectedWord: PropTypes.string,
+  correctLetters: PropTypes.array,
 };
 
 export default Word;

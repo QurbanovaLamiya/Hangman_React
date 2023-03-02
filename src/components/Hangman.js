@@ -43,16 +43,15 @@ const Hangman = () => {
     return () => window.removeEventListener("keydown", handleKeydown);
   }, [correctLetters, wrongLetters, playable]);
 
-  function playAgain() {
+  const playAgain = () => {
     setPlayable(true);
 
     // Empty Arrays
     setCorrectLetters([]);
     setWrongLetters([]);
 
-    const random = Math.floor(Math.random() * words.length);
-    selectedWord = words[random];
-  }
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+  };
 
   return (
     <>

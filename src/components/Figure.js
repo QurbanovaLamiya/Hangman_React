@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Figure = ({ wrongLetters }) => {
   const wrong = wrongLetters.length;
 
@@ -24,6 +26,10 @@ const Figure = ({ wrongLetters }) => {
       {wrong > 5 && <line x1="140" y1="150" x2="160" y2="180" />}
     </svg>
   );
+};
+
+Figure.propTypes = {
+  wrongLetters: PropTypes.array,
 };
 
 export default Figure;
